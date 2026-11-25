@@ -6,7 +6,8 @@ class Cylinder:
         self.radius = radius
         
     def volume(self):
-        # To-DO: complete this method
+        vol = 3.14*self.radius**2*self.height
+        return vol
     
     def surface_area(self):
         top = 3.14 * (self.radius)**2
