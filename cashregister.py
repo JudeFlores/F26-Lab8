@@ -14,6 +14,7 @@ class CashRegister:
         self._undoPrice = []
               
     def addItem(self, price):
+        print(f"Added {price}$ item")
         self._itemCount = self._itemCount + 1
         self._totalPrice = self._totalPrice + price
         self._undoPrice.append(price)
@@ -25,14 +26,19 @@ class CashRegister:
         return f"Count: {self._itemCount}"
     
     def clear(self):
+        print("Cleared Register")
         self._itemCount = 0
         self._totalPrice = 0.0
         self._undoPrice.clear()
         
     #complete the following undo() method
     def undo(self):
-        self._itemCount -= 1
-        self._totalPrice -= self._undoPrice[len(self._undoPrice)-1]
-        self._undoPrice.pop(len(self._undoPrice)-1)
+        if self._itemCount > 0:
+            print(f"Undoed {self._undoPrice[len(self._undoPrice)-1]}$ item")
+            self._itemCount -= 1
+            self._totalPrice -= self._undoPrice[len(self._undoPrice)-1]
+            self._undoPrice.pop()
+        else:
+            print("Nothing to undo")
         
 

@@ -1,6 +1,6 @@
 #To test the cash register class
 from cashregister import CashRegister
-#adds 3 items, undos 2 items, adds 1 item, undos 1 item, adds 1 item, clears
+#adds 3 items, undos 2 items, adds 1 item, undos 1 item, adds 1 item, clears, undos nothing
 def main():
     reg = CashRegister()
     reg.addItem(5)
@@ -38,6 +38,8 @@ def main():
     reg.clear()
     print(reg.getTotal())
     print(reg.getCount())
+
+    reg.undo()
 
 if __name__ == "__main__":
     main()
